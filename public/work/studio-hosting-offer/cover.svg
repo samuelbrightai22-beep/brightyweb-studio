@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img" aria-label="$11/year hosting landing page preview">
+  <rect width="1600" height="1000" fill="#E8B23A"/>
+  <rect x="0" y="0" width="1600" height="72" fill="#F2D079"/>
+  <text x="60" y="48" font-family="Georgia,serif" font-size="28" fill="#0A1828" font-style="italic">B</text>
+  <text x="95" y="48" font-family="Inter,sans-serif" font-size="18" fill="#0A1828" letter-spacing="2" font-weight="600">BRIGHTYWEB</text>
+  <g font-family="Inter,sans-serif" font-size="14" fill="#0A1828" letter-spacing="2" font-weight="500">
+    <text x="980" y="48">HOME</text>
+    <text x="1080" y="48">ABOUT</text>
+    <text x="1180" y="48">SERVICES</text>
+    <text x="1300" y="48">WORK</text>
+    <text x="1380" y="48">CONTACT</text>
+  </g>
+  <rect x="1470" y="28" width="100" height="32" rx="16" fill="#0A1828"/>
+  <text x="1520" y="50" font-family="Inter,sans-serif" font-size="13" fill="#E8B23A" font-weight="600" text-anchor="middle">START A PROJECT</text>
+
+  <!-- eyebrow -->
+  <text x="60" y="200" font-family="Inter,sans-serif" font-size="13" fill="#0A1828" letter-spacing="3" font-weight="600">— WEBSITE HOSTING</text>
+  <!-- big headline -->
+  <text x="60" y="320" font-family="Inter,sans-serif" font-size="180" font-weight="500" fill="#0A1828" letter-spacing="-6">$11</text>
+  <text x="380" y="320" font-family="Georgia,serif" font-style="italic" font-size="80" fill="#0A1828" opacity="0.6">/year</text>
+  <!-- supporting copy -->
+  <text x="60" y="400" font-family="Inter,sans-serif" font-size="22" fill="#0A1828" opacity="0.75">A real, simple hosting offer that comes with every Brightyweb</text>
+  <text x="60" y="432" font-family="Inter,sans-serif" font-size="22" fill="#0A1828" opacity="0.75">website. No monthly bill, no surprise renewals.</text>
+  <!-- CTA -->
+  <rect x="60" y="500" width="240" height="64" rx="32" fill="#0E2A52"/>
+  <text x="180" y="540" font-family="Inter,sans-serif" font-size="16" fill="#F4EFE3" font-weight="600" text-anchor="middle">START YOUR WEBSITE</text>
+  <rect x="320" y="500" width="220" height="64" rx="32" fill="none" stroke="#0A1828" stroke-width="1.5"/>
+  <text x="430" y="540" font-family="Inter,sans-serif" font-size="15" fill="#0A1828" font-weight="500" text-anchor="middle">EMAIL ME INSTEAD</text>
+
+  <!-- right info panel -->
+  <g transform="translate(900 200)">
+    <rect width="640" height="640" rx="20" fill="#F2D079"/>
+    <text x="40" y="80" font-family="Inter,sans-serif" font-size="13" fill="#0A1828" letter-spacing="3" font-weight="600">— WHAT'S INCLUDED</text>
+    <text x="40" y="160" font-family="Inter,sans-serif" font-size="36" fill="#0A1828" font-weight="500" letter-spacing="-1">A real home for your</text>
+    <text x="40" y="200" font-family="Inter,sans-serif" font-size="36" fill="#0A1828" font-weight="500" letter-spacing="-1">new website.</text>
+    <g font-family="Inter,sans-serif" font-size="16" fill="#0A1828">
+      <circle cx="50" cy="270" r="4" fill="#0A1828"/>
+      <text x="70" y="275">Reliable shared hosting</text>
+      <circle cx="50" cy="310" r="4" fill="#0A1828"/>
+      <text x="70" y="315">SSL certificate</text>
+      <circle cx="50" cy="350" r="4" fill="#0A1828"/>
+      <text x="70" y="355">Custom domain setup</text>
+      <circle cx="50" cy="390" r="4" fill="#0A1828"/>
+      <text x="70" y="395">Email forwarding</text>
+      <circle cx="50" cy="430" r="4" fill="#0A1828"/>
+      <text x="70" y="435">Backup configuration</text>
+    </g>
+    <text x="40" y="510" font-family="Inter,sans-serif" font-size="12" fill="#0A1828" opacity="0.55">$11/year is a flat hosting deployment cost — not a recurring subscription model. Available only with Brightyweb website projects.</text>
+  </g>
+
+  <!-- bottom note -->
+  <text x="60" y="940" font-family="Inter,sans-serif" font-size="14" fill="#0A1828" opacity="0.6">Brightyweb is a web design studio. Hosting is a supporting service, not the main business.</text>
+</svg>

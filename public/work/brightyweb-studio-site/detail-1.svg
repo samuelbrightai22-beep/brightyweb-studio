@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Brightyweb services section detail">
+  <rect width="1200" height="800" fill="#FBF8F1"/>
+  <text x="60" y="100" font-family="Inter,sans-serif" font-size="13" fill="#B98218" letter-spacing="3" font-weight="600">— WHAT I DESIGN</text>
+  <text x="60" y="180" font-family="Inter,sans-serif" font-size="60" font-weight="500" fill="#0A1828" letter-spacing="-2">One focus, done</text>
+  <text x="60" y="248" font-family="Inter,sans-serif" font-size="60" font-weight="500" fill="#0A1828" letter-spacing="-2">properly.</text>
+  <line x1="60" y1="320" x2="1140" y2="320" stroke="#0A1828" stroke-width="1.5"/>
+  <g font-family="Inter,sans-serif">
+    <text x="60" y="400" font-size="14" fill="#B98218" font-weight="600" letter-spacing="2">(01)</text>
+    <text x="180" y="400" font-size="32" fill="#0A1828" font-weight="500">Website Design</text>
+    <text x="180" y="440" font-size="14" fill="#5C7290">Custom websites designed around your brand, your audience, and your goals — never a recycled template.</text>
+  </g>
+  <line x1="60" y1="490" x2="1140" y2="490" stroke="#E4E0D6"/>
+  <g font-family="Inter,sans-serif">
+    <text x="60" y="560" font-size="14" fill="#B98218" font-weight="600" letter-spacing="2">(02)</text>
+    <text x="180" y="560" font-size="32" fill="#0A1828" font-weight="500">Website Redesign</text>
+    <text x="180" y="600" font-size="14" fill="#5C7290">Transform an outdated website into a cleaner, faster, more credible experience.</text>
+  </g>
+  <line x1="60" y1="650" x2="1140" y2="650" stroke="#E4E0D6"/>
+  <g font-family="Inter,sans-serif">
+    <text x="60" y="720" font-size="14" fill="#B98218" font-weight="600" letter-spacing="2">(03)</text>
+    <text x="180" y="720" font-size="32" fill="#0A1828" font-weight="500">Landing Page Design</text>
+  </g>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img" aria-label="Brightyweb studio homepage full desktop screenshot">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071629"/>
+      <stop offset="100%" stop-color="#0E2A52"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg2)"/>
+  <!-- browser chrome -->
+  <rect x="0" y="0" width="1600" height="60" fill="#0A1828"/>
+  <circle cx="24" cy="30" r="6" fill="#1B3A6B"/>
+  <circle cx="48" cy="30" r="6" fill="#1B3A6B"/>
+  <circle cx="72" cy="30" r="6" fill="#E8B23A"/>
+  <rect x="500" y="18" width="600" height="24" rx="12" fill="#071629"/>
+  <text x="800" y="34" font-family="Inter,sans-serif" font-size="12" fill="#5C7290" text-anchor="middle">https://brightyweb.space-z.ai</text>
+
+  <!-- nav -->
+  <text x="60" y="130" font-family="Georgia,serif" font-style="italic" font-size="32" fill="#F4EFE3">B</text>
+  <text x="100" y="130" font-family="Inter,sans-serif" font-size="16" fill="#F4EFE3" letter-spacing="2">BRIGHTYWEB</text>
+  <g font-family="Inter,sans-serif" font-size="14" fill="#9FB1C7" letter-spacing="2">
+    <text x="980" y="130">HOME</text>
+    <text x="1080" y="130">ABOUT</text>
+    <text x="1180" y="130">SERVICES</text>
+    <text x="1300" y="130">WORK</text>
+    <text x="1380" y="130">CONTACT</text>
+  </g>
+  <rect x="1470" y="105" width="100" height="32" rx="16" fill="#E8B23A"/>
+  <text x="1520" y="127" font-family="Inter,sans-serif" font-size="13" fill="#0A1828" font-weight="600" text-anchor="middle">START A PROJECT</text>
+
+  <line x1="60" y1="160" x2="1540" y2="160" stroke="#1B3A6B" stroke-width="1"/>
+
+  <!-- hero -->
+  <text x="60" y="240" font-family="Inter,sans-serif" font-size="13" fill="#E8B23A" letter-spacing="3" font-weight="600">— ACCEPTING NEW PROJECTS</text>
+  <text x="60" y="340" font-family="Inter,sans-serif" font-size="80" font-weight="500" fill="#F4EFE3" letter-spacing="-2">We design websites</text>
+  <text x="60" y="430" font-family="Inter,sans-serif" font-size="80" font-weight="500" fill="#F4EFE3" letter-spacing="-2">people </text>
+  <text x="280" y="430" font-family="Georgia,serif" font-style="italic" font-size="80" fill="#E8B23A">remember.</text>
+  <text x="60" y="510" font-family="Inter,sans-serif" font-size="18" fill="#9FB1C7">Modern, responsive websites designed around your brand,</text>
+  <text x="60" y="535" font-family="Inter,sans-serif" font-size="18" fill="#9FB1C7">your audience and your goals.</text>
+
+  <rect x="60" y="580" width="200" height="56" rx="28" fill="#E8B23A"/>
+  <text x="160" y="613" font-family="Inter,sans-serif" font-size="14" fill="#0A1828" font-weight="600" text-anchor="middle">VIEW MY WORK</text>
+  <rect x="280" y="580" width="200" height="56" rx="28" fill="none" stroke="#F4EFE3" stroke-width="1.5"/>
+  <text x="380" y="613" font-family="Inter,sans-serif" font-size="14" fill="#F4EFE3" font-weight="500" text-anchor="middle">START A PROJECT</text>
+
+  <g font-family="Inter,sans-serif" font-size="13" fill="#9FB1C7">
+    <text x="60" y="690">Fixed quotes</text>
+    <text x="220" y="690">Launch in 1–3 weeks</text>
+    <text x="430" y="690">Deployed from $11/year</text>
+  </g>
+
+  <!-- right mockup cluster -->
+  <g transform="translate(900 240)">
+    <rect x="0" y="0" width="580" height="420" rx="12" fill="#0A1828" stroke="#1B3A6B"/>
+    <rect x="0" y="0" width="580" height="44" fill="#0E2A52"/>
+    <circle cx="22" cy="22" r="5" fill="#1B3A6B"/>
+    <circle cx="40" cy="22" r="5" fill="#1B3A6B"/>
+    <circle cx="58" cy="22" r="5" fill="#E8B23A"/>
+    <rect x="36" y="80" width="240" height="12" rx="6" fill="#1B3A6B"/>
+    <rect x="36" y="102" width="180" height="10" rx="5" fill="#1B3A6B" opacity="0.6"/>
+    <rect x="36" y="140" width="510" height="180" rx="8" fill="#0E2A52"/>
+    <rect x="56" y="160" width="180" height="10" rx="5" fill="#E8B23A"/>
+    <rect x="56" y="180" width="140" height="8" rx="4" fill="#5C7290"/>
+    <rect x="56" y="200" width="160" height="8" rx="4" fill="#5C7290" opacity="0.6"/>
+    <rect x="56" y="240" width="100" height="40" rx="20" fill="#E8B23A"/>
+    <rect x="320" y="160" width="200" height="140" rx="6" fill="#071629"/>
+    <rect x="340" y="180" width="160" height="10" rx="5" fill="#E8B23A" opacity="0.7"/>
+    <rect x="340" y="200" width="120" height="8" rx="4" fill="#5C7290"/>
+    <rect x="36" y="345" width="240" height="50" rx="8" fill="#0E2A52"/>
+    <rect x="56" y="362" width="120" height="6" rx="3" fill="#1B3A6B"/>
+    <rect x="300" y="345" width="240" height="50" rx="8" fill="#0E2A52"/>
+    <rect x="320" y="362" width="120" height="6" rx="3" fill="#1B3A6B"/>
+  </g>
+
+  <!-- bottom section preview -->
+  <line x1="60" y1="780" x2="1540" y2="780" stroke="#1B3A6B"/>
+  <text x="60" y="850" font-family="Inter,sans-serif" font-size="13" fill="#E8B23A" letter-spacing="3" font-weight="600">— WHAT I DESIGN</text>
+  <text x="60" y="920" font-family="Inter,sans-serif" font-size="48" font-weight="500" fill="#F4EFE3" letter-spacing="-1">One focus, done properly.</text>
+</svg>
