@@ -22,7 +22,7 @@ export const STUDIO = {
   siteUrl: "https://brightyweb.space-z.ai",
   /** Logo image — uploaded by the user. Path under /public/. */
   logo: {
-    src: "/logo.png",
+    src: "/logo.jpg",
     alt: "Brightyweb logo",
     /** Width hint for the rendered logo in the header (px). */
     headerHeight: 36,
