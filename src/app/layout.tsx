@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { Chatbot } from "@/components/chat/chatbot";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -77,6 +78,7 @@ export default function RootLayout({
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
+          <Chatbot />
         </div>
         <Toaster />
       </body>
