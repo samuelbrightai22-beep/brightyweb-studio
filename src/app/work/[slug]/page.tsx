@@ -72,17 +72,17 @@ export default async function ProjectPage({
             />
           </>
         )}
-        <div className="container-px relative mx-auto max-w-[1600px]">
+        <div className="container-px relative mx-auto max-w-[1400px]">
           <Reveal>
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 text-xs font-medium tracking-tight opacity-60 transition-opacity hover:opacity-100"
+              className="inline-flex items-center gap-2 text-xs font-medium opacity-60 transition-opacity hover:opacity-100"
             >
               <ArrowLeft size={14} />
               Back to all work
             </Link>
           </Reveal>
-          <div className="mt-10 grid items-end gap-10 md:grid-cols-[1.2fr_0.8fr]">
+          <div className="mt-8 grid items-end gap-8 md:grid-cols-[1.2fr_0.8fr]">
             <div>
               <Reveal>
                 <SectionLabel tone={isGold ? "ink" : "gold"}>
@@ -90,19 +90,19 @@ export default async function ProjectPage({
                 </SectionLabel>
               </Reveal>
               <Reveal delay={0.1}>
-                <h1 className="display mt-6 text-[clamp(2.5rem,7vw,5.5rem)]">
+                <h1 className="mt-5 text-[clamp(2.25rem,5vw,4rem)] font-bold leading-tight tracking-tight">
                   {project.title}
                 </h1>
               </Reveal>
             </div>
             <Reveal delay={0.2}>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {project.url && (
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="group inline-flex items-center gap-2 text-sm font-medium tracking-tight transition-colors"
+                    className="group inline-flex items-center gap-2 text-sm font-semibold transition-colors"
                   >
                     {project.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
                     <ArrowUpRight
@@ -114,8 +114,8 @@ export default async function ProjectPage({
                 <p
                   className={
                     isGold
-                      ? "text-sm leading-relaxed text-[var(--blue-deep)]/70"
-                      : "text-sm leading-relaxed text-[var(--paper)]/65"
+                      ? "text-base leading-relaxed text-[var(--blue-deep)]/75"
+                      : "text-base leading-relaxed text-[var(--paper)]/70"
                   }
                 >
                   {project.summary}
@@ -128,8 +128,8 @@ export default async function ProjectPage({
 
       {/* PROJECT INFORMATION */}
       <section className="section-sm bg-[var(--paper)] text-[var(--ink)]">
-        <div className="container-px mx-auto max-w-[1600px]">
-          <div className="grid gap-8 border-y border-[var(--ink)]/10 py-8 md:grid-cols-4">
+        <div className="container-px mx-auto max-w-[1400px]">
+          <div className="grid gap-6 rounded-2xl border border-[var(--ink)]/10 bg-white p-6 py-8 md:grid-cols-4 md:p-8">
             <InfoCell label="Client" value={project.client} />
             <InfoCell label="Category" value={project.category} />
             <InfoCell label="Year" value={project.year} />
@@ -141,7 +141,7 @@ export default async function ProjectPage({
                     href={project.url}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="editorial-link text-[var(--gold-deep)]"
+                    className="text-[var(--gold-deep)] hover:underline"
                   >
                     View live site
                   </a>
@@ -157,14 +157,14 @@ export default async function ProjectPage({
       {/* OVERVIEW + DESIGN DIRECTION */}
       {(project.overview || project.designDirection) && (
         <section className="section bg-[var(--paper)] text-[var(--ink)]">
-          <div className="container-px mx-auto max-w-[1600px] grid gap-12 md:grid-cols-[0.4fr_0.6fr] md:gap-20">
+          <div className="container-px mx-auto max-w-[1400px] grid gap-10 md:grid-cols-[0.4fr_0.6fr] md:gap-16">
             <Reveal>
               <SectionLabel tone="blue">Overview</SectionLabel>
             </Reveal>
-            <div className="space-y-12">
+            <div className="space-y-10">
               {project.overview && (
                 <Reveal delay={0.1}>
-                  <p className="body-prose text-[var(--ink)]/85">
+                  <p className="text-lg leading-relaxed text-[var(--ink)]/85">
                     {project.overview}
                   </p>
                 </Reveal>
@@ -173,7 +173,7 @@ export default async function ProjectPage({
                 <Reveal delay={0.15}>
                   <div>
                     <SectionLabel tone="blue">Design direction</SectionLabel>
-                    <p className="mt-4 body-prose text-[var(--ink)]/75">
+                    <p className="mt-4 text-lg leading-relaxed text-[var(--ink)]/75">
                       {project.designDirection}
                     </p>
                   </div>
@@ -187,9 +187,9 @@ export default async function ProjectPage({
                       {project.deliverables.map((d) => (
                         <li
                           key={d}
-                          className="flex items-start gap-2.5 text-[0.9rem] text-[var(--ink)]/70"
+                          className="flex items-start gap-2.5 text-sm text-[var(--ink)]/70"
                         >
-                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[var(--gold-deep)]" />
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--gold-deep)]" />
                           <span>{d}</span>
                         </li>
                       ))}
@@ -206,23 +206,23 @@ export default async function ProjectPage({
       <section
         className={
           isGold
-            ? "section bg-[var(--blue-deep)] text-[var(--paper)] grain"
-            : "section bg-[var(--blue)] text-[var(--paper)] grain"
+            ? "section bg-[var(--blue-deep)] text-[var(--paper)]"
+            : "section bg-[var(--blue)] text-[var(--paper)]"
         }
       >
-        <div className="container-px mx-auto max-w-[1600px]">
+        <div className="container-px mx-auto max-w-[1400px]">
           <Reveal>
             <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
               <div>
                 <SectionLabel tone="gold">Desktop design</SectionLabel>
-                <h2 className="display mt-6 text-[clamp(1.75rem,3.5vw,3rem)]">
+                <h2 className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight">
                   The full desktop experience.
                 </h2>
               </div>
             </div>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="mt-12 overflow-hidden rounded-xl border border-white/10 shadow-[0_50px_120px_-50px_rgba(7,22,41,0.8)]">
+            <div className="mt-10 overflow-hidden rounded-xl border border-white/10 shadow-[0_50px_120px_-50px_rgba(7,22,41,0.8)]">
               <BrowserFrame url={(project.url ?? "brightyweb.space-z.ai").replace(/^https?:\/\//, "")}>
                 <img
                   src={project.desktop.src}
@@ -238,32 +238,25 @@ export default async function ProjectPage({
 
       {/* MOBILE DESIGN */}
       <section className="section bg-[var(--paper)] text-[var(--ink)]">
-        <div className="container-px mx-auto max-w-[1600px]">
+        <div className="container-px mx-auto max-w-[1400px]">
           <Reveal>
             <div className="max-w-2xl">
               <SectionLabel tone="blue">Mobile design</SectionLabel>
-              <h2 className="display mt-6 text-[clamp(1.75rem,3.5vw,3rem)]">
-                Designed mobile-first,
-                <span className="font-display italic text-[var(--gold-deep)]">
-                  {" "}
-                  always.
-                </span>
+              <h2 className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight">
+                Designed mobile-first, always.
               </h2>
-              <p className="mt-6 max-w-md text-[0.95rem] leading-relaxed text-[var(--ink)]/65">
+              <p className="mt-5 max-w-md text-base leading-relaxed text-[var(--ink)]/65">
                 The phone layout is planned first, not squeezed out of the
                 desktop design. Every breakpoint is intentional.
               </p>
             </div>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="mt-12 flex flex-wrap items-start justify-center gap-10 md:gap-16">
+            <div className="mt-10 flex flex-wrap items-start justify-center gap-10 md:gap-16">
               {project.mobile.map((shot, i) => (
                 <div
                   key={i}
                   className="w-full max-w-[280px]"
-                  style={{
-                    transform: `rotate(${i % 2 === 0 ? -2 : 2}deg)`,
-                  }}
                 >
                   <PhoneFrame>
                     <img
@@ -282,17 +275,17 @@ export default async function ProjectPage({
 
       {/* ADDITIONAL SCREENS */}
       {project.gallery && project.gallery.length > 0 && (
-        <section className="section bg-[var(--blue-deep)] text-[var(--paper)] grain">
-          <div className="container-px mx-auto max-w-[1600px]">
+        <section className="section bg-[var(--blue-deep)] text-[var(--paper)]">
+          <div className="container-px mx-auto max-w-[1400px]">
             <Reveal>
               <div className="max-w-2xl">
                 <SectionLabel tone="gold">Additional screens</SectionLabel>
-                <h2 className="display mt-6 text-[clamp(1.75rem,3.5vw,3rem)]">
+                <h2 className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight">
                   More from the project.
                 </h2>
               </div>
             </Reveal>
-            <div className="mt-12 grid gap-8 md:grid-cols-2">
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
               {project.gallery.map((shot, i) => (
                 <Reveal key={i} delay={0.1 + i * 0.1}>
                   <div className="overflow-hidden rounded-xl border border-white/10 shadow-[0_30px_80px_-30px_rgba(7,22,41,0.6)]">
@@ -313,10 +306,10 @@ export default async function ProjectPage({
       {/* WEBSITE LINK */}
       {project.url && (
         <section className="section-sm bg-[var(--gold)] text-[var(--blue-deep)]">
-          <div className="container-px mx-auto max-w-[1600px] flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div className="container-px mx-auto max-w-[1400px] flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div>
               <SectionLabel tone="ink">Website link</SectionLabel>
-              <p className="mt-4 font-display text-2xl tracking-tight md:text-3xl">
+              <p className="mt-3 text-2xl font-bold tracking-tight md:text-3xl">
                 Visit the live website.
               </p>
             </div>
@@ -334,8 +327,8 @@ export default async function ProjectPage({
       )}
 
       {/* NEXT PROJECT */}
-      <section className="section-sm bg-[var(--blue-deep)] text-[var(--paper)] grain">
-        <div className="container-px mx-auto max-w-[1600px]">
+      <section className="section-sm bg-[var(--blue-deep)] text-[var(--paper)]">
+        <div className="container-px mx-auto max-w-[1400px]">
           <Reveal>
             <Link
               href={`/work/${next.slug}`}
@@ -343,11 +336,11 @@ export default async function ProjectPage({
             >
               <div className="flex items-end justify-between gap-6 border-t border-white/10 pt-8">
                 <div>
-                  <p className="eyebrow text-[var(--gold)]">Next project</p>
-                  <h2 className="display mt-4 text-[clamp(2rem,5vw,4rem)] transition-colors group-hover:text-[var(--gold)]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--gold)]">Next project</p>
+                  <h2 className="mt-3 text-[clamp(1.75rem,4vw,3rem)] font-bold tracking-tight transition-colors group-hover:text-[var(--gold)]">
                     {next.title}
                   </h2>
-                  <p className="mt-3 text-sm text-[var(--paper)]/60">
+                  <p className="mt-2 text-sm text-[var(--paper)]/60">
                     {next.category} — {next.year}
                   </p>
                 </div>
@@ -362,10 +355,10 @@ export default async function ProjectPage({
 
       {/* CTA */}
       <section className="section-sm bg-[var(--paper)] text-[var(--ink)]">
-        <div className="container-px mx-auto max-w-[1600px] flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        <div className="container-px mx-auto max-w-[1400px] flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <p className="eyebrow text-[var(--gold-deep)]">Have a project?</p>
-            <h2 className="display mt-4 text-[clamp(1.75rem,3.5vw,3rem)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--gold-deep)]">Have a project?</p>
+            <h2 className="mt-3 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight">
               Let&apos;s design yours.
             </h2>
           </div>
@@ -381,8 +374,8 @@ export default async function ProjectPage({
 function InfoCell({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div>
-      <p className="eyebrow text-[var(--ink)]/40">{label}</p>
-      <p className="mt-2 text-[0.95rem] font-medium tracking-tight text-[var(--ink)]/85">
+      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--ink)]/40">{label}</p>
+      <p className="mt-2 text-base font-semibold text-[var(--ink)]/85">
         {value}
       </p>
     </div>

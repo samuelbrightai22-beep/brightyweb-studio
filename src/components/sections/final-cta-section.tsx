@@ -13,51 +13,47 @@ export function FinalCtaSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-[var(--blue-deep)] text-[var(--paper)] section grain"
+      className="relative overflow-hidden bg-[var(--blue-deep)] text-[var(--paper)] section text-center"
     >
-      {/* decorative blobs */}
+      {/* soft accents */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-[15%] top-0 h-[50vh] w-[50vh] rounded-full bg-[var(--blue)] opacity-60 blur-[120px]"
+        className="pointer-events-none absolute -left-[10%] top-0 h-[40vh] w-[40vh] rounded-full bg-[var(--blue)] opacity-60 blur-[120px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-[10%] bottom-0 h-[40vh] w-[40vh] rounded-full bg-[var(--gold)] opacity-[0.08] blur-[120px]"
+        className="pointer-events-none absolute -right-[10%] bottom-0 h-[35vh] w-[35vh] rounded-full bg-[var(--gold)] opacity-[0.08] blur-[120px]"
       />
 
-      <div className="container-px relative mx-auto max-w-[1600px] text-center">
+      <div className="container-px relative mx-auto max-w-[1400px]">
         <div className="mx-auto flex max-w-3xl flex-col items-center">
           <SectionLabel tone="gold" className="justify-center">
-            Final CTA
+            Let&apos;s talk
           </SectionLabel>
           <motion.h2
-            initial={{ opacity: 0, y: 28 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="display mt-8 text-[clamp(2.5rem,6vw,5rem)]"
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+            className="mt-5 text-[clamp(2.25rem,5vw,4rem)] font-bold leading-tight tracking-tight"
           >
-            Ready for a website that represents
-            <br className="hidden md:block" /> your business
-            <span className="font-display italic text-[var(--gold)]">
-              {" "}
-              properly?
-            </span>
+            Ready for a website that represents your business{" "}
+            <span className="text-[var(--gold)]">properly?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 max-w-xl body-prose text-[var(--paper)]/70"
+            transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
+            className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--paper)]/75"
           >
-            Tell me what you&apos;re building and let&apos;s create a website
-            around it. No hard sell — just a real conversation about whether
-            this is a good fit for what you need.
+            Tell me what you&apos;re building and let&apos;s create a website around
+            it. No hard sell — just a real conversation about whether this is a
+            good fit for what you need.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
-            transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-12 flex flex-wrap items-center justify-center gap-3"
+            transition={{ duration: 0.55, delay: 0.2, ease: "easeOut" }}
+            className="mt-10 flex flex-wrap items-center justify-center gap-3"
           >
             <EditorialButton href="/contact" variant="gold" size="lg" withArrow>
               Start a Project

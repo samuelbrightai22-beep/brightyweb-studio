@@ -60,7 +60,7 @@ export default function ContactPage() {
       <PageHeader
         label="Contact"
         title="Let's build"
-        italicAccent="your website."
+        accent="your website."
         intro="Tell me what you're building. Every enquiry gets a real reply within 24 hours — usually with a few questions before any quote is sent, so the project gets scoped properly from the start."
         variant="blue"
       />
@@ -69,26 +69,26 @@ export default function ContactPage() {
         ref={ref}
         className="section-sm bg-[var(--paper)] text-[var(--ink)]"
       >
-        <div className="container-px mx-auto max-w-[1600px] grid gap-12 md:grid-cols-[0.4fr_0.6fr] md:gap-20">
+        <div className="container-px mx-auto max-w-[1400px] grid gap-10 md:grid-cols-[0.4fr_0.6fr] md:gap-16">
           {/* left: contact info */}
-          <div className="space-y-10">
+          <div className="space-y-8">
             <Reveal>
               <SectionLabel tone="blue">Direct contact</SectionLabel>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="space-y-5">
+              <div className="space-y-4">
                 <a
                   href={`mailto:${STUDIO.email}`}
-                  className="group flex items-start gap-4 rounded-lg border border-[var(--ink)]/10 bg-[var(--paper)] p-5 transition-all hover:border-[var(--gold-deep)]/40 hover:bg-[var(--cream)]"
+                  className="group flex items-start gap-4 rounded-2xl border border-[var(--ink)]/10 bg-white p-5 transition-all hover:border-[var(--gold-deep)]/40 hover:shadow-[0_20px_40px_-20px_rgba(7,22,41,0.15)]"
                 >
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[var(--blue-deep)] text-[var(--gold)]">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[var(--blue)] text-[var(--gold)]">
                     <Mail size={16} />
                   </span>
                   <span>
-                    <span className="block text-xs uppercase tracking-[0.18em] text-[var(--ink)]/45">
+                    <span className="block text-xs font-semibold uppercase tracking-[0.15em] text-[var(--ink)]/45">
                       Email
                     </span>
-                    <span className="mt-1 block font-medium tracking-tight text-[var(--ink)] transition-colors group-hover:text-[var(--gold-deep)]">
+                    <span className="mt-1 block font-semibold text-[var(--ink)] transition-colors group-hover:text-[var(--gold-deep)]">
                       {STUDIO.email}
                     </span>
                   </span>
@@ -97,16 +97,16 @@ export default function ContactPage() {
                   href={STUDIO.instagram.url}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="group flex items-start gap-4 rounded-lg border border-[var(--ink)]/10 bg-[var(--paper)] p-5 transition-all hover:border-[var(--gold-deep)]/40 hover:bg-[var(--cream)]"
+                  className="group flex items-start gap-4 rounded-2xl border border-[var(--ink)]/10 bg-white p-5 transition-all hover:border-[var(--gold-deep)]/40 hover:shadow-[0_20px_40px_-20px_rgba(7,22,41,0.15)]"
                 >
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[var(--blue-deep)] text-[var(--gold)]">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[var(--blue)] text-[var(--gold)]">
                     <Instagram size={16} />
                   </span>
                   <span>
-                    <span className="block text-xs uppercase tracking-[0.18em] text-[var(--ink)]/45">
+                    <span className="block text-xs font-semibold uppercase tracking-[0.15em] text-[var(--ink)]/45">
                       Instagram
                     </span>
-                    <span className="mt-1 block font-medium tracking-tight text-[var(--ink)] transition-colors group-hover:text-[var(--gold-deep)]">
+                    <span className="mt-1 block font-semibold text-[var(--ink)] transition-colors group-hover:text-[var(--gold-deep)]">
                       {STUDIO.instagram.handle}
                     </span>
                   </span>
@@ -114,8 +114,8 @@ export default function ContactPage() {
               </div>
             </Reveal>
             <Reveal delay={0.2}>
-              <div className="rounded-lg border border-[var(--ink)]/10 bg-[var(--cream)]/50 p-5">
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--ink)]/45">
+              <div className="rounded-2xl border border-[var(--ink)]/10 bg-[var(--cream)] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--ink)]/45">
                   Good to know
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--ink)]/70">
@@ -132,10 +132,15 @@ export default function ContactPage() {
           <Reveal delay={0.15}>
             <form
               onSubmit={onSubmit}
-              className="rounded-2xl border border-[var(--ink)]/10 bg-[var(--paper)] p-6 shadow-[0_30px_80px_-50px_rgba(7,22,41,0.4)] md:p-10"
+              className="rounded-2xl border border-[var(--ink)]/10 bg-white p-6 shadow-[0_30px_80px_-50px_rgba(7,22,41,0.4)] md:p-10"
             >
               <div className="grid gap-6">
-                <Field label="Name" name="name" placeholder="Your name" required />
+                <Field
+                  label="Name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
                 <Field
                   label="Email"
                   name="email"
@@ -149,14 +154,14 @@ export default function ContactPage() {
                   placeholder="Business or brand name (optional)"
                 />
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-[var(--ink)]/50">
+                  <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-[var(--ink)]/50">
                     Project type
                   </label>
                   <select
                     name="type"
                     required
                     defaultValue=""
-                    className="mt-2 w-full rounded-md border border-[var(--ink)]/15 bg-[var(--paper)] px-4 py-3 text-[0.95rem] tracking-tight text-[var(--ink)] outline-none transition-colors focus:border-[var(--gold-deep)] focus:ring-2 focus:ring-[var(--gold)]/30"
+                    className="mt-2 w-full rounded-md border border-[var(--ink)]/15 bg-white px-4 py-3 text-base font-medium text-[var(--ink)] outline-none transition-colors focus:border-[var(--gold-deep)] focus:ring-2 focus:ring-[var(--gold)]/30"
                   >
                     <option value="" disabled>
                       Select a project type
@@ -169,7 +174,7 @@ export default function ContactPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-[var(--ink)]/50">
+                  <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-[var(--ink)]/50">
                     Project details
                   </label>
                   <textarea
@@ -177,7 +182,7 @@ export default function ContactPage() {
                     rows={5}
                     required
                     placeholder="What are you building? Who is it for? Any timeline or budget you have in mind?"
-                    className="mt-2 w-full resize-y rounded-md border border-[var(--ink)]/15 bg-[var(--paper)] px-4 py-3 text-[0.95rem] leading-relaxed tracking-tight text-[var(--ink)] outline-none transition-colors placeholder:text-[var(--ink)]/35 focus:border-[var(--gold-deep)] focus:ring-2 focus:ring-[var(--gold)]/30"
+                    className="mt-2 w-full resize-y rounded-md border border-[var(--ink)]/15 bg-white px-4 py-3 text-base leading-relaxed text-[var(--ink)] outline-none transition-colors placeholder:text-[var(--ink)]/35 focus:border-[var(--gold-deep)] focus:ring-2 focus:ring-[var(--gold)]/30"
                   />
                 </div>
                 <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -191,7 +196,7 @@ export default function ContactPage() {
                   </EditorialButton>
                   <a
                     href={`mailto:${STUDIO.email}`}
-                    className="text-xs text-[var(--ink)]/55 hover:text-[var(--gold-deep)]"
+                    className="text-sm font-medium text-[var(--ink)]/55 hover:text-[var(--gold-deep)]"
                   >
                     or email me directly
                   </a>
@@ -203,14 +208,14 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ teaser */}
-      <section className="section-sm bg-[var(--blue-deep)] text-[var(--paper)] grain">
-        <div className="container-px mx-auto max-w-[1600px] flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+      <section className="section-sm bg-[var(--blue-deep)] text-[var(--paper)]">
+        <div className="container-px mx-auto max-w-[1400px] flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
             <SectionLabel tone="gold">Common questions</SectionLabel>
-            <p className="mt-4 font-display text-[clamp(1.5rem,3vw,2.25rem)] tracking-tight">
+            <p className="mt-3 text-[clamp(1.5rem,3vw,2.25rem)] font-bold tracking-tight">
               Not sure about something?
             </p>
-            <p className="mt-2 text-sm text-[var(--paper)]/60">
+            <p className="mt-2 text-base text-[var(--paper)]/65">
               The homepage has an honest FAQ with the questions that come up
               most.
             </p>
@@ -239,7 +244,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-xs uppercase tracking-[0.18em] text-[var(--ink)]/50">
+      <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-[var(--ink)]/50">
         {label}
         {required && <span className="ml-1 text-[var(--gold-deep)]">*</span>}
       </label>
@@ -248,7 +253,7 @@ function Field({
         name={name}
         placeholder={placeholder}
         required={required}
-        className="mt-2 w-full rounded-md border border-[var(--ink)]/15 bg-[var(--paper)] px-4 py-3 text-[0.95rem] tracking-tight text-[var(--ink)] outline-none transition-colors placeholder:text-[var(--ink)]/35 focus:border-[var(--gold-deep)] focus:ring-2 focus:ring-[var(--gold)]/30"
+        className="mt-2 w-full rounded-md border border-[var(--ink)]/15 bg-white px-4 py-3 text-base font-medium text-[var(--ink)] outline-none transition-colors placeholder:text-[var(--ink)]/35 focus:border-[var(--gold-deep)] focus:ring-2 focus:ring-[var(--gold)]/30"
       />
     </div>
   );

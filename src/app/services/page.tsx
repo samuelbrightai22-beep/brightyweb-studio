@@ -19,7 +19,7 @@ export default function ServicesPage() {
       <PageHeader
         label="Services"
         title="One focus — done"
-        italicAccent="properly."
+        accent="properly."
         intro="Five core services, all centered on the same thing: designing professional websites for businesses and brands. Responsive layouts are part of every build, not a separate service."
         variant="blue"
       />
@@ -34,26 +34,26 @@ export default function ServicesPage() {
               id={service.slug}
               className={
                 isAlt
-                  ? "section bg-[var(--blue)] text-[var(--paper)] grain relative overflow-hidden"
+                  ? "section bg-[var(--blue)] text-[var(--paper)] relative overflow-hidden"
                   : "section bg-[var(--paper)] text-[var(--ink)]"
               }
             >
-              <div className="container-px mx-auto max-w-[1600px] grid gap-10 md:grid-cols-[0.4fr_0.6fr] md:gap-20">
+              <div className="container-px mx-auto max-w-[1400px] grid gap-8 md:grid-cols-[0.4fr_0.6fr] md:gap-16">
                 {/* left: number + title */}
-                <div className="md:sticky md:top-32 md:self-start">
+                <div>
                   <Reveal>
                     <span
                       className={
                         isAlt
-                          ? "numeral text-sm font-semibold text-[var(--gold)] opacity-70"
-                          : "numeral text-sm font-semibold text-[var(--gold-deep)] opacity-70"
+                          ? "grid h-12 w-12 place-items-center rounded-full bg-[var(--gold)] font-bold text-[var(--blue-deep)]"
+                          : "grid h-12 w-12 place-items-center rounded-full bg-[var(--blue)] font-bold text-[var(--gold)]"
                       }
                     >
-                      ({service.number})
+                      {service.number}
                     </span>
                   </Reveal>
                   <Reveal delay={0.05}>
-                    <h2 className="display mt-6 text-[clamp(2rem,4vw,3.25rem)]">
+                    <h2 className="mt-5 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight">
                       {service.title}
                     </h2>
                   </Reveal>
@@ -61,8 +61,8 @@ export default function ServicesPage() {
                     <p
                       className={
                         isAlt
-                          ? "mt-6 max-w-md text-[0.95rem] leading-relaxed text-[var(--paper)]/70"
-                          : "mt-6 max-w-md text-[0.95rem] leading-relaxed text-[var(--ink)]/65"
+                          ? "mt-4 max-w-md text-base leading-relaxed text-[var(--paper)]/75"
+                          : "mt-4 max-w-md text-base leading-relaxed text-[var(--ink)]/65"
                       }
                     >
                       {service.summary}
@@ -71,7 +71,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* right: detail */}
-                <div className="space-y-10">
+                <div className="space-y-8">
                   <Reveal delay={0.15}>
                     <div>
                       <SectionLabel tone={isAlt ? "gold" : "blue"}>
@@ -80,8 +80,8 @@ export default function ServicesPage() {
                       <p
                         className={
                           isAlt
-                            ? "mt-4 body-prose text-[var(--paper)]/80"
-                            : "mt-4 body-prose text-[var(--ink)]/80"
+                            ? "mt-4 text-base leading-relaxed text-[var(--paper)]/85"
+                            : "mt-4 text-base leading-relaxed text-[var(--ink)]/85"
                         }
                       >
                         {service.description}
@@ -97,8 +97,8 @@ export default function ServicesPage() {
                       <p
                         className={
                           isAlt
-                            ? "mt-4 body-prose text-[var(--paper)]/75"
-                            : "mt-4 body-prose text-[var(--ink)]/75"
+                            ? "mt-4 text-base leading-relaxed text-[var(--paper)]/80"
+                            : "mt-4 text-base leading-relaxed text-[var(--ink)]/75"
                         }
                       >
                         {service.whoFor}
@@ -106,7 +106,7 @@ export default function ServicesPage() {
                     </div>
                   </Reveal>
 
-                  <div className="grid gap-10 sm:grid-cols-2">
+                  <div className="grid gap-8 sm:grid-cols-2">
                     <Reveal delay={0.25}>
                       <div>
                         <SectionLabel tone={isAlt ? "gold" : "blue"}>
@@ -115,8 +115,8 @@ export default function ServicesPage() {
                         <ul
                           className={
                             isAlt
-                              ? "mt-4 space-y-2.5 text-[0.9rem] text-[var(--paper)]/70"
-                              : "mt-4 space-y-2.5 text-[0.9rem] text-[var(--ink)]/70"
+                              ? "mt-4 space-y-2.5 text-sm text-[var(--paper)]/75"
+                              : "mt-4 space-y-2.5 text-sm text-[var(--ink)]/70"
                           }
                         >
                           {service.whatIDesign.map((item) => (
@@ -124,8 +124,8 @@ export default function ServicesPage() {
                               <span
                                 className={
                                   isAlt
-                                    ? "mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[var(--gold)]"
-                                    : "mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[var(--gold-deep)]"
+                                    ? "mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--gold)]"
+                                    : "mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--gold-deep)]"
                                 }
                               />
                               <span>{item}</span>
@@ -142,8 +142,8 @@ export default function ServicesPage() {
                         <ul
                           className={
                             isAlt
-                              ? "mt-4 space-y-2.5 text-[0.9rem] text-[var(--paper)]/70"
-                              : "mt-4 space-y-2.5 text-[0.9rem] text-[var(--ink)]/70"
+                              ? "mt-4 space-y-2.5 text-sm text-[var(--paper)]/75"
+                              : "mt-4 space-y-2.5 text-sm text-[var(--ink)]/70"
                           }
                         >
                           {service.whatYouReceive.map((item) => (
@@ -151,8 +151,8 @@ export default function ServicesPage() {
                               <span
                                 className={
                                   isAlt
-                                    ? "mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[var(--gold)]"
-                                    : "mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[var(--gold-deep)]"
+                                    ? "mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--gold)]"
+                                    : "mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--gold-deep)]"
                                 }
                               />
                               <span>{item}</span>
@@ -183,9 +183,9 @@ export default function ServicesPage() {
 
       {/* footnote about responsiveness */}
       <section className="section-sm bg-[var(--paper)] text-[var(--ink)]">
-        <div className="container-px mx-auto max-w-[1600px]">
+        <div className="container-px mx-auto max-w-[1400px]">
           <Reveal>
-            <p className="max-w-2xl text-[0.95rem] leading-relaxed text-[var(--ink)]/55">
+            <p className="max-w-2xl text-sm leading-relaxed text-[var(--ink)]/55">
               Responsive web design is intentionally not listed as a separate
               service. Every website above is designed mobile-first, so it
               works beautifully on every device — phone, tablet and desktop —

@@ -13,10 +13,11 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [logoOk, setLogoOk] = React.useState(true);
 
   // Detect scroll to switch header background to solid.
   React.useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -46,33 +47,39 @@ export function SiteHeader() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+          "fixed inset-x-0 top-0 z-50 transition-all duration-300",
           scrolled || open
-            ? "bg-[var(--blue-deep)]/90 backdrop-blur-xl border-b border-white/5"
-            : "bg-transparent",
+            ? "bg-white shadow-[0_1px_0_rgba(7,22,41,0.08)]"
+            : "bg-white shadow-[0_1px_0_rgba(7,22,41,0.08)]",
         )}
       >
-        <div className="container-px mx-auto flex h-[var(--header-h,72px)] max-w-[1600px] items-center justify-between">
+        <div className="container-px mx-auto flex h-[var(--header-h,72px)] max-w-[1400px] items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="group relative flex items-center gap-2.5 py-2"
+            className="flex items-center gap-2 py-2"
             aria-label={`${STUDIO.name} — home`}
           >
-            <span
-              className="grid h-9 w-9 place-items-center rounded-md bg-[var(--gold)] font-display text-[1.05rem] leading-none text-[var(--blue-deep)]"
-              aria-hidden="true"
-            >
-              B
-            </span>
-            <span className="flex flex-col leading-none">
-              <span className="text-[0.95rem] font-semibold tracking-tight text-[var(--paper)]">
-                {STUDIO.name}
+            {logoOk ? (
+              <img
+                src={STUDIO.logo.src}
+                alt={STUDIO.logo.alt}
+                height={STUDIO.logo.headerHeight}
+                style={{
+                  height: STUDIO.logo.headerHeight,
+                  width: "auto",
+                  objectFit: "contain",
+                }}
+                onError={() => setLogoOk(false)}
+              />
+            ) : (
+              <span
+                className="grid h-9 w-9 place-items-center rounded-md bg-[var(--blue)] font-sans text-[1.05rem] font-bold leading-none text-[var(--gold)]"
+                aria-hidden="true"
+              >
+                B
               </span>
-              <span className="text-[0.6rem] font-medium uppercase tracking-[0.18em] text-[var(--paper)]/55">
-                {STUDIO.tagline}
-              </span>
-            </span>
+            )}
           </Link>
 
           {/* Desktop nav */}
@@ -84,20 +91,13 @@ export function SiteHeader() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "relative px-4 py-2 text-[0.8125rem] font-medium tracking-tight transition-colors duration-300",
+                    "rounded-md px-4 py-2 text-[0.875rem] font-semibold transition-colors",
                     active
-                      ? "text-[var(--gold)]"
-                      : "text-[var(--paper)]/70 hover:text-[var(--paper)]",
+                      ? "text-[var(--blue)]"
+                      : "text-[var(--ink)]/70 hover:text-[var(--blue)]",
                   )}
                 >
                   {link.label}
-                  {active && (
-                    <motion.span
-                      layoutId="nav-active"
-                      className="absolute inset-x-3 -bottom-px h-px bg-[var(--gold)]"
-                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                    />
-                  )}
                 </Link>
               );
             })}
@@ -114,11 +114,11 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full text-[var(--paper)] transition-colors hover:bg-white/5 md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-md text-[var(--ink)] transition-colors hover:bg-[var(--ink)]/5 md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </header>
@@ -126,61 +126,51 @@ export function SiteHeader() {
       {/* Spacer so content starts below the fixed header */}
       <div className="h-[var(--header-h,72px)]" aria-hidden="true" />
 
-      {/* Mobile menu overlay */}
+      {/* Mobile menu overlay — Wix-style slide-down panel */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-[var(--blue-deep)] md:hidden"
-            style={{ paddingTop: "var(--header-h,72px)" }}
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed inset-x-0 top-[var(--header-h,72px)] z-40 bg-white shadow-[0_20px_40px_-20px_rgba(7,22,41,0.2)] md:hidden"
           >
-            <div className="container-px mx-auto flex h-full max-w-[1600px] flex-col">
-              <nav className="flex flex-1 flex-col justify-center gap-2">
+            <div className="container-px mx-auto max-w-[1400px] py-4">
+              <nav className="flex flex-col">
                 {NAV_LINKS.map((link, i) => {
                   const active = isActive(link.href);
                   return (
                     <motion.div
                       key={link.href}
-                      initial={{ opacity: 0, y: 24 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 24 }}
+                      initial={{ opacity: 0, x: -8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -8 }}
                       transition={{
-                        duration: 0.45,
-                        delay: 0.05 + i * 0.06,
-                        ease: [0.22, 1, 0.36, 1],
+                        duration: 0.25,
+                        delay: 0.04 * i,
+                        ease: "easeOut",
                       }}
                     >
                       <Link
                         href={link.href}
-                        className="group flex items-baseline justify-between border-b border-white/5 py-5"
+                        className={cn(
+                          "block border-b border-[var(--ink)]/5 py-4 text-lg font-semibold",
+                          active ? "text-[var(--blue)]" : "text-[var(--ink)]",
+                        )}
                       >
-                        <span
-                          className={cn(
-                            "font-display text-5xl tracking-tight transition-colors",
-                            active
-                              ? "text-[var(--gold)]"
-                              : "text-[var(--paper)] group-hover:text-[var(--gold)]",
-                          )}
-                        >
-                          {link.label}
-                        </span>
-                        <span className="numeral text-xs font-medium text-[var(--paper)]/40">
-                          0{i + 1}
-                        </span>
+                        {link.label}
                       </Link>
                     </motion.div>
                   );
                 })}
               </nav>
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.45, delay: 0.4 }}
-                className="flex flex-col gap-3 py-8"
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.25, delay: 0.25 }}
+                className="flex flex-col gap-3 py-6"
               >
                 <EditorialButton
                   href={PRIMARY_CTA.href}
@@ -193,7 +183,7 @@ export function SiteHeader() {
                 </EditorialButton>
                 <a
                   href={`mailto:${STUDIO.email}`}
-                  className="text-center text-sm text-[var(--paper)]/60 hover:text-[var(--gold)]"
+                  className="text-center text-sm font-medium text-[var(--ink)]/60 hover:text-[var(--blue)]"
                 >
                   {STUDIO.email}
                 </a>

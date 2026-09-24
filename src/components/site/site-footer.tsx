@@ -2,44 +2,38 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Instagram, Mail } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { NAV_LINKS, PRIMARY_CTA, STUDIO } from "@/lib/studio";
 import { EditorialButton } from "./editorial-button";
-import { SectionLabel } from "./section-label";
 
 export function SiteFooter() {
   const ref = React.useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
+  const [logoOk, setLogoOk] = React.useState(true);
 
   return (
     <footer
       ref={ref}
-      className="relative overflow-hidden bg-[var(--blue-deep)] text-[var(--paper)]"
+      className="relative bg-[var(--blue-deep)] text-[var(--paper)]"
     >
-      {/* top divider */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[var(--gold)]/40 to-transparent" />
-
-      {/* main */}
-      <div className="container-px mx-auto grid max-w-[1600px] gap-12 py-20 md:grid-cols-[1.4fr_1fr] md:py-28">
-        {/* left: brand + cta */}
-        <div className="flex flex-col justify-between gap-12">
+      {/* top CTA strip */}
+      <div className="border-b border-white/10">
+        <div className="container-px mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 py-12 text-center md:flex-row md:text-left">
           <div>
-            <SectionLabel tone="gold">Next Step</SectionLabel>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--gold)]">
+              Next Step
+            </p>
             <motion.h2
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="display mt-6 text-[clamp(2.5rem,5vw,4.5rem)] text-[var(--paper)]"
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="mt-3 text-3xl font-bold tracking-tight md:text-4xl"
             >
-              Have a website in mind?
-              <br />
-              <span className="font-display italic text-[var(--gold)]">
-                Let&apos;s build it.
-              </span>
+              Have a website in mind? Let&apos;s build it.
             </motion.h2>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <EditorialButton href={PRIMARY_CTA.href} variant="gold" size="lg" withArrow>
               {PRIMARY_CTA.label}
             </EditorialButton>
@@ -52,73 +46,88 @@ export function SiteFooter() {
             </EditorialButton>
           </div>
         </div>
-
-        {/* right: nav + contact */}
-        <div className="grid grid-cols-2 gap-8">
-          <div>
-            <p className="eyebrow text-[var(--paper)]/40">Navigation</p>
-            <ul className="mt-5 space-y-2.5">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="editorial-link text-[var(--paper)]/85 hover:text-[var(--gold)]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="eyebrow text-[var(--paper)]/40">Contact</p>
-            <ul className="mt-5 space-y-3">
-              <li>
-                <a
-                  href={`mailto:${STUDIO.email}`}
-                  className="group inline-flex items-center gap-1.5 text-[var(--paper)]/85 hover:text-[var(--gold)]"
-                >
-                  <Mail size={14} />
-                  <span className="editorial-link">{STUDIO.email}</span>
-                  <ArrowUpRight
-                    size={13}
-                    className="opacity-0 transition-opacity group-hover:opacity-100"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href={STUDIO.instagram.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="group inline-flex items-center gap-1.5 text-[var(--paper)]/85 hover:text-[var(--gold)]"
-                >
-                  <Instagram size={14} />
-                  <span className="editorial-link">{STUDIO.instagram.handle}</span>
-                  <ArrowUpRight
-                    size={13}
-                    className="opacity-0 transition-opacity group-hover:opacity-100"
-                  />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
 
-      {/* big wordmark */}
-      <div className="container-px mx-auto max-w-[1600px] overflow-hidden border-t border-white/5">
-        <div
-          aria-hidden="true"
-          className="select-none py-12 text-center font-display text-[clamp(5rem,18vw,18rem)] leading-none text-[var(--paper)]/[0.04]"
-        >
-          {STUDIO.name}
+      {/* main footer grid */}
+      <div className="container-px mx-auto grid max-w-[1400px] gap-10 py-14 md:grid-cols-4">
+        {/* brand block */}
+        <div className="md:col-span-2">
+          <Link href="/" className="flex items-center" aria-label="Brightyweb — home">
+            {logoOk ? (
+              <img
+                src={STUDIO.logo.src}
+                alt={STUDIO.logo.alt}
+                height={40}
+                style={{ height: 40, width: "auto", objectFit: "contain" }}
+                onError={() => setLogoOk(false)}
+              />
+            ) : (
+              <span className="grid h-10 w-10 place-items-center rounded-md bg-[var(--gold)] font-sans text-lg font-bold text-[var(--blue-deep)]">
+                B
+              </span>
+            )}
+          </Link>
+          <p className="mt-5 max-w-md text-sm leading-relaxed text-[var(--paper)]/70">
+            Premium website design for businesses and brands — launched without
+            expensive monthly hosting costs.
+          </p>
+          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--gold)]">
+            {STUDIO.tagline}
+          </p>
+        </div>
+
+        {/* nav */}
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--paper)]/50">
+            Navigation
+          </p>
+          <ul className="mt-4 space-y-2">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-[var(--paper)]/80 hover:text-[var(--gold)]"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* contact */}
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--paper)]/50">
+            Contact
+          </p>
+          <ul className="mt-4 space-y-3">
+            <li>
+              <a
+                href={`mailto:${STUDIO.email}`}
+                className="inline-flex items-center gap-2 text-sm text-[var(--paper)]/80 hover:text-[var(--gold)]"
+              >
+                <Mail size={14} />
+                {STUDIO.email}
+              </a>
+            </li>
+            <li>
+              <a
+                href={STUDIO.instagram.url}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-2 text-sm text-[var(--paper)]/80 hover:text-[var(--gold)]"
+              >
+                <Instagram size={14} />
+                {STUDIO.instagram.handle}
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
       {/* bottom bar */}
-      <div className="border-t border-white/5">
-        <div className="container-px mx-auto flex max-w-[1600px] flex-col items-center justify-between gap-3 py-6 text-xs text-[var(--paper)]/50 md:flex-row">
+      <div className="border-t border-white/10">
+        <div className="container-px mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-3 py-6 text-xs text-[var(--paper)]/50 md:flex-row">
           <p>
             © {new Date().getFullYear()} {STUDIO.longName}. All rights reserved.
           </p>

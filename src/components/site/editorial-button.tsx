@@ -6,7 +6,7 @@ type Variant = "gold" | "blue" | "outline-light" | "outline-dark" | "ghost-light
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "group inline-flex items-center justify-center gap-2 font-medium tracking-tight transition-all duration-300 ease-out rounded-full whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:opacity-50 disabled:pointer-events-none";
+  "group inline-flex items-center justify-center gap-2 font-semibold tracking-tight transition-all duration-200 ease-out rounded-full whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:opacity-50 disabled:pointer-events-none";
 
 const variants: Record<Variant, string> = {
   // Primary: warm yellow background, deep blue text. Used on dark + light sections.

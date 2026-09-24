@@ -14,30 +14,26 @@ export function FaqSection() {
     <section
       ref={ref}
       id="faq"
-      className="relative bg-[var(--paper)] text-[var(--ink)] section"
+      className="relative bg-[var(--cream)] text-[var(--ink)] section"
     >
-      <div className="container-px mx-auto max-w-[1600px]">
-        <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
+      <div className="container-px mx-auto max-w-[1400px]">
+        <div className="grid gap-10 md:grid-cols-[0.4fr_0.6fr] md:gap-16">
           {/* left */}
           <div className="md:sticky md:top-32 md:self-start">
             <SectionLabel tone="blue">Common questions</SectionLabel>
             <motion.h2
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="display mt-6 text-[clamp(2rem,4vw,3.25rem)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="mt-5 text-[clamp(2rem,4vw,3rem)] font-bold tracking-tight"
             >
-              Honest answers to
-              <span className="font-display italic text-[var(--gold-deep)]">
-                {" "}
-                the questions that come up most.
-              </span>
+              Honest answers to the questions that come up most.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 max-w-md text-[0.95rem] leading-relaxed text-[var(--ink)]/65"
+              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+              className="mt-5 max-w-md text-base leading-relaxed text-[var(--ink)]/65"
             >
               If something you want to know isn&apos;t here, send it through the
               contact form — every question gets a real reply within 24 hours.
@@ -45,7 +41,9 @@ export function FaqSection() {
           </div>
 
           {/* right: accordion */}
-          <FaqAccordion items={FAQ_ITEMS} tone="light" />
+          <div className="rounded-2xl border border-[var(--ink)]/10 bg-white p-2 md:p-4">
+            <FaqAccordion items={FAQ_ITEMS} tone="light" />
+          </div>
         </div>
       </div>
     </section>
