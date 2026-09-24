@@ -27,12 +27,12 @@ export function HeroSection() {
       {/* semi-transparent black overlay — keeps image visible, gives text contrast */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-black/60"
+        className="absolute inset-0 -z-10 bg-black/35"
       />
       {/* subtle bottom-to-mid black gradient for premium editorial depth */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/55 to-black/75"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/20 via-black/30 to-black/50"
       />
 
       <div className="container-px mx-auto flex min-h-[88vh] max-w-[1400px] flex-col items-center justify-center py-24 text-center md:min-h-[92vh] md:py-32">
