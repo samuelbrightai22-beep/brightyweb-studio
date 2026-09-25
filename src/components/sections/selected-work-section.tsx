@@ -13,7 +13,7 @@ import { getFeaturedProjects } from "@/lib/portfolio";
 export function SelectedWorkSection() {
   const ref = React.useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
-  const projects = getFeaturedProjects(2);
+  const projects = getFeaturedProjects(4);
 
   return (
     <section

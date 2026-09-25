@@ -225,8 +225,8 @@ export default async function ProjectPage({
             <div className="mt-10 overflow-hidden rounded-xl border border-white/10 shadow-[0_50px_120px_-50px_rgba(7,22,41,0.8)]">
               <BrowserFrame url={(project.url ?? "brightyweb.space-z.ai").replace(/^https?:\/\//, "")}>
                 <img
-                  src={project.desktop.src}
-                  alt={project.desktop.alt}
+                  src={(project.desktop ?? project.cover).src}
+                  alt={(project.desktop ?? project.cover).alt}
                   className="block h-auto w-full"
                   loading="lazy"
                 />
@@ -236,42 +236,44 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      {/* MOBILE DESIGN */}
-      <section className="section bg-[var(--paper)] text-[var(--ink)]">
-        <div className="container-px mx-auto max-w-[1400px]">
-          <Reveal>
-            <div className="max-w-2xl">
-              <SectionLabel tone="blue">Mobile design</SectionLabel>
-              <h2 className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight">
-                Designed mobile-first, always.
-              </h2>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-[var(--ink)]/65">
-                The phone layout is planned first, not squeezed out of the
-                desktop design. Every breakpoint is intentional.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div className="mt-10 flex flex-wrap items-start justify-center gap-10 md:gap-16">
-              {project.mobile.map((shot, i) => (
-                <div
-                  key={i}
-                  className="w-full max-w-[280px]"
-                >
-                  <PhoneFrame>
-                    <img
-                      src={shot.src}
-                      alt={shot.alt}
-                      className="block h-auto w-full"
-                      loading="lazy"
-                    />
-                  </PhoneFrame>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      {/* MOBILE DESIGN — only render when mobile screenshots exist */}
+      {project.mobile && project.mobile.length > 0 && (
+        <section className="section bg-[var(--paper)] text-[var(--ink)]">
+          <div className="container-px mx-auto max-w-[1400px]">
+            <Reveal>
+              <div className="max-w-2xl">
+                <SectionLabel tone="blue">Mobile design</SectionLabel>
+                <h2 className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight">
+                  Designed mobile-first, always.
+                </h2>
+                <p className="mt-5 max-w-md text-base leading-relaxed text-[var(--ink)]/65">
+                  The phone layout is planned first, not squeezed out of the
+                  desktop design. Every breakpoint is intentional.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <div className="mt-10 flex flex-wrap items-start justify-center gap-10 md:gap-16">
+                {project.mobile.map((shot, i) => (
+                  <div
+                    key={i}
+                    className="w-full max-w-[280px]"
+                  >
+                    <PhoneFrame>
+                      <img
+                        src={shot.src}
+                        alt={shot.alt}
+                        className="block h-auto w-full"
+                        loading="lazy"
+                      />
+                    </PhoneFrame>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* ADDITIONAL SCREENS */}
       {project.gallery && project.gallery.length > 0 && (

@@ -48,15 +48,15 @@ export default function WorkPage() {
       </section>
 
       {/* project grid */}
-      <section className="section bg-[var(--paper)] text-[var(--ink)]">
+      <section className="section bg-[var(--blue-deep)] text-[var(--paper)]">
         <div className="container-px mx-auto max-w-[1400px]">
           {projects.length === 0 ? (
-            <p className="text-center text-[var(--ink)]/55">
+            <p className="text-center text-[var(--paper)]/55">
               No projects yet. Add them in{" "}
               <code>src/lib/portfolio.ts</code>.
             </p>
           ) : (
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-x-6 gap-y-10 md:grid-cols-2">
               {projects.map((project, i) => (
                 <ProjectCard
                   key={project.slug}
