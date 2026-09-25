@@ -35,9 +35,10 @@ export const NAV_LINKS = [
   { label: "Services", href: "/services" },
   { label: "Work", href: "/work" },
   { label: "Contact", href: "/contact" },
+  { label: "Start a Project", href: "/start-a-project" },
 ] as const;
 
 export const PRIMARY_CTA = {
   label: "Start a Project",
-  href: "/contact",
+  href: "/start-a-project",
 } as const;
