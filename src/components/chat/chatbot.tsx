@@ -23,6 +23,13 @@ const INITIAL_GREETING: Msg = {
 };
 
 export function Chatbot() {
+  // Feature flag — hide the chatbot on deployments where the Z.ai LLM SDK
+  // isn't configured (e.g., Vercel — the z-ai-web-dev-sdk reads from
+  // /etc/.z-ai-config which only exists inside the Z.ai sandbox).
+  // To disable on a deployment, set NEXT_PUBLIC_CHATBOT_ENABLED=false in
+  // that deployment's environment variables.
+  const enabled = process.env.NEXT_PUBLIC_CHATBOT_ENABLED !== "false";
+
   const [open, setOpen] = React.useState(false);
   const [messages, setMessages] = React.useState<Msg[]>([INITIAL_GREETING]);
   const [input, setInput] = React.useState("");
@@ -100,6 +107,9 @@ export function Chatbot() {
       setLoading(false);
     }
   }
+
+  // Hide the chatbot entirely when the feature flag is off.
+  if (!enabled) return null;
 
   return (
     <>
